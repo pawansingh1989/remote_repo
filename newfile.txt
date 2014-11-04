@@ -1,2 +1,2 @@
 hello world
-I am on branch b1
+I am on branch b2
