@@ -2,34 +2,32 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="120646" started-at="2014-10-30T16:29:36Z" finished-at="2014-10-30T16:31:36Z">
+  <suite name="Default suite" duration-ms="50379" started-at="2014-11-03T11:40:58Z" finished-at="2014-11-03T11:41:49Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="120646" started-at="2014-10-30T16:29:36Z" finished-at="2014-10-30T16:31:36Z">
+    <test name="Default test" duration-ms="50379" started-at="2014-11-03T11:40:58Z" finished-at="2014-11-03T11:41:49Z">
       <class name="selenium.Fresh">
-        <test-method status="PASS" signature="initialize()[pri:0, instance:selenium.Fresh@28fe2250]" name="initialize" is-config="true" duration-ms="8043" started-at="2014-10-30T21:59:28Z" finished-at="2014-10-30T21:59:36Z">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:selenium.Fresh@7eba168e]" name="initialize" is-config="true" duration-ms="8252" started-at="2014-11-03T17:10:50Z" finished-at="2014-11-03T17:10:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="FAIL" signature="irctc()[pri:0, instance:selenium.Fresh@28fe2250]" name="irctc" duration-ms="120623" started-at="2014-10-30T21:59:36Z" finished-at="2014-10-30T22:01:36Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method status="FAIL" signature="irctc()[pri:0, instance:selenium.Fresh@7eba168e]" name="irctc" duration-ms="50358" started-at="2014-11-03T17:10:58Z" finished-at="2014-11-03T17:11:49Z">
+          <exception class="org.openqa.selenium.NoSuchWindowException">
             <message>
-              <![CDATA[Unable to locate element: {"method":"xpath","selector":"//td[@data-year = '2014' and @data-month = '11']/a[text() = '18']"}
-Command duration or timeout: 60.22 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[Window not found. The browser window may have been closed.
+Command duration or timeout: 13 milliseconds
 Build info: version: '2.42.2', revision: '6a6995d', time: '2014-06-03 17:42:30'
-System info: host: 'NODE175', ip: '192.168.1.2', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
-Session ID: 6016e986-4918-4f7c-be63-4cd7020777ce
+System info: host: 'NODE175', ip: '10.210.0.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Session ID: 04dde303-3132-4ea8-8151-3e821ef51cd0
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, browserConnectionEnabled=true, webStorageEnabled=true, nativeEvents=false, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=27.0}]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//td[@data-year = '2014' and @data-month = '11']/a[text() = '18']"}
-Command duration or timeout: 60.22 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: Window not found. The browser window may have been closed.
+Command duration or timeout: 13 milliseconds
 Build info: version: '2.42.2', revision: '6a6995d', time: '2014-06-03 17:42:30'
-System info: host: 'NODE175', ip: '192.168.1.2', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
-Session ID: 6016e986-4918-4f7c-be63-4cd7020777ce
+System info: host: 'NODE175', ip: '10.210.0.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Session ID: 04dde303-3132-4ea8-8151-3e821ef51cd0
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, browserConnectionEnabled=true, webStorageEnabled=true, nativeEvents=false, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=27.0}]
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
@@ -39,11 +37,9 @@ Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, cssSele
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:449)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:357)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at selenium.Fresh.irctc(Fresh.java:143)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:614)
+	at org.openqa.selenium.firefox.FirefoxDriver.getScreenshotAs(FirefoxDriver.java:323)
+	at selenium.Fresh.irctc(Fresh.java:232)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -68,19 +64,68 @@ Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, cssSele
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Unable to locate element: {"method":"xpath","selector":"//td[@data-year = '2014' and @data-month = '11']/a[text() = '18']"}
+Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Window not found. The browser window may have been closed.
 Build info: version: '2.42.2', revision: '6a6995d', time: '2014-06-03 17:42:30'
-System info: host: 'NODE175', ip: '192.168.1.2', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+System info: host: 'NODE175', ip: '10.210.0.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
 Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous6393045749293476634webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:9470)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous6393045749293476634webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:407)
+	at <anonymous class>.nsCommandProcessor.prototype.execute(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous5265222555715975395webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:11525)
+	at <anonymous class>.Dispatcher.executeAs/<(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous5265222555715975395webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:8287)
+	at <anonymous class>.Resource.prototype.handle(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous5265222555715975395webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:8433)
+	at <anonymous class>.Dispatcher.prototype.dispatch(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous5265222555715975395webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:8380)
+	at <anonymous class>.WebDriverServer/<.handle(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous5265222555715975395webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:11310)
+	at <anonymous class>.createHandlerFunc/<(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous5265222555715975395webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1935)
+	at <anonymous class>.ServerHandler.prototype.handleResponse(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous5265222555715975395webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:2261)
+	at <anonymous class>.Connection.prototype.process(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous5265222555715975395webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1168)
+	at <anonymous class>.RequestReader.prototype._handleResponse(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous5265222555715975395webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1616)
+	at <anonymous class>.RequestReader.prototype._processBody(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous5265222555715975395webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1464)
+	at <anonymous class>.RequestReader.prototype.onInputStreamReady(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous5265222555715975395webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1333)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- irctc -->
-        <test-method status="PASS" signature="destory()[pri:0, instance:selenium.Fresh@28fe2250]" name="destory" is-config="true" duration-ms="263" started-at="2014-10-30T22:01:36Z" finished-at="2014-10-30T22:01:37Z">
+        <test-method status="FAIL" signature="destory()[pri:0, instance:selenium.Fresh@7eba168e]" name="destory" is-config="true" duration-ms="0" started-at="2014-11-03T17:11:49Z" finished-at="2014-11-03T17:11:49Z">
+          <exception class="org.openqa.selenium.remote.SessionNotFoundException">
+            <message>
+              <![CDATA[The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.42.2', revision: '6a6995d', time: '2014-06-03 17:42:30'
+System info: host: 'NODE175', ip: '10.210.0.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.remote.SessionNotFoundException: The FirefoxDriver cannot be used after quit() was called.
+Build info: version: '2.42.2', revision: '6a6995d', time: '2014-06-03 17:42:30'
+System info: host: 'NODE175', ip: '10.210.0.103', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.7.0_51'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.execute(FirefoxDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:393)
+	at org.openqa.selenium.By$ById.findElement(By.java:214)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at selenium.Fresh.destory(Fresh.java:461)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:308)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.remote.SessionNotFoundException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- destory -->

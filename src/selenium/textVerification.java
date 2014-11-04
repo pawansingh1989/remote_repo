@@ -404,7 +404,7 @@ public class textVerification
 			builder.keyDown(Keys.CONTROL).click(driver.findElement(By.xpath("//a[text()='BED & BATH']"))).click(driver.findElement(By.xpath("//a[text()='WOMEN']"))).keyUp(Keys.CONTROL).build().perform();
 //			builder.doubleClick(null);
 			//builder.dragAndDrop(source, target);
-		
+	
 			JavascriptExecutor js=(JavascriptExecutor)driver;
 			//js.executeScript("alert('Hi');");
 			js.executeScript("alert(document.getElementsByTagName('a').length)");

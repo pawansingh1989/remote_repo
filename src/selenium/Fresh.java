@@ -1,6 +1,9 @@
 package selenium;
 
 import java.io.File;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -37,7 +40,7 @@ public class Fresh
 	private XSSFCell cell;
 	private DataFormatter formatter;
 	WebDriver driver;
-	String irctc,macys;
+	String irctc,macys,google;
 	
 	@BeforeSuite
 	void initialize()
@@ -47,7 +50,7 @@ public class Fresh
 		driver.manage().timeouts().implicitlyWait(60,TimeUnit.SECONDS);
 		irctc="https://www.irctc.co.in/";
 		macys="https://www.macys.com/account/profile";
-		//google="https://www.google.co.in/";
+		google="https://www.google.co.in/";
 	}
 	
 	public void setExcel(String path,String sheetname) throws IOException
@@ -123,10 +126,16 @@ public class Fresh
           	driver.findElement(By.xpath("//ul[@class='ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all'][2]/li[1]/a")).click();
           	
           	String date=a[2]; //date from excel
-          	String month=date.substring(0,2);
+          	String datesplit[]=date.split("/");
+          	System.out.println("date format from excel"+date);
+          	String month=datesplit[1];
           	int mm = Integer.parseInt(month);
-			String dd=date.substring(3,5);
-			String yy=date.substring(6,8);
+			String dd=datesplit[0];
+			String yy="20"+datesplit[2];
+			
+			
+			
+			
 			System.out.println(dd);
 			System.out.println(mm);
 			System.out.println(yy);
@@ -139,22 +148,73 @@ public class Fresh
 //				
 //			}
 //			
-			driver.findElement(By.xpath("//div[text()='Departure']/following::input[@id='departDateInt']/following::img[3]")).click();
-			if(driver.findElement(By.xpath("//td[@data-year = '20"+yy+"' and @data-month = '"+(mm-1)+"']/a[text() = '"+dd+"']")).isDisplayed()){
-				
-				driver.findElement(By.xpath("//td[@data-year = '20"+yy+"' and @data-month = '"+(mm-1)+"']/a[text() = '"+dd+"']")).click();
-			   }
-			   else
-			   {
-				
-			    driver.findElement(By.xpath("//span[text()='Next']")).click();
-			    driver.findElement(By.xpath("//td[@data-year = '20"+yy+"' and @data-month = '"+(mm-1)+"']/a[text() = '"+dd+"']")).click();
-			   }
+			//date from system
+			DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+			Date sysDate = new Date();
+			String systemDate=dateFormat.format(sysDate);
+			System.out.println(systemDate);
+			String sysYear=systemDate.substring(0,4);
+			sysYear="2015";
+			String sysMonth=systemDate.substring(5,7);
+			System.out.println("system year"+sysYear);
+			System.out.println("system month"+sysMonth);
 			
+			
+			
+			driver.findElement(By.xpath("//div[text()='Departure']/following::input[@id='departDateInt']/following::img[3]")).click();
+			//date from irctc present selection box
+			String Year="";
+			String Month="";
+			String convertedMonth=convertedmonth(mm);
+			Year=driver.findElement(By.xpath("//div[contains(@class,'datepicker-group-first')]//span[@class='ui-datepicker-year']")).getText();
+			Month=driver.findElement(By.xpath("//div[contains(@class,'datepicker-group-first')]//span[@class='ui-datepicker-month']")).getText();
+			
+			System.out.println(Year+" "+Month);	
+			System.out.println("converted month"+convertedMonth);
+			while(!((Year.equalsIgnoreCase(yy))&&(Month.equalsIgnoreCase(convertedMonth)))){
+				System.out.println(Year+" "+Month);	
+				System.out.println("converted month"+convertedMonth);
+				System.out.println(sysYear);
+				if(Year.equalsIgnoreCase(sysYear))
+				{
+					if(convertedMonth.equalsIgnoreCase(Month))
+					{
+						driver.findElement(By.xpath("//td[@data-year = '"+yy+"' and @data-month = '"+(mm-1)+"']/a[text() = '"+dd+"']")).click();
+						
+					}
+					else
+					{
+						driver.findElement(By.xpath("//span[text()='Next']")).click();
+					}
+				}
+				else 
+				{
+					driver.findElement(By.xpath("//span[text()='Next']")).click();
+				}
+				
+				Year=driver.findElement(By.xpath("//div[contains(@class,'datepicker-group-last')]//span[@class='ui-datepicker-year']")).getText();
+				Month=driver.findElement(By.xpath("//div[contains(@class,'datepicker-group-last')]//span[@class='ui-datepicker-month']")).getText();
+				String Day=driver.findElement(By.xpath("//div[@class='ui-datepicker-group ui-datepicker-group-last']//div[@class='ui-datepicker-title']//span[2]")).getText();
+				
+			}
 			
 			
 //			driver.findElement(By.xpath("//div[text()='Departure']/following::input[@id='departDateInt']/following::img[3]")).click();
-//			driver.findElement(By.xpath("//td[@data-year = '20"+yy+"' and @data-month = '"+(mm-1)+"']/a[text() = '"+dd+"']")).click();
+//			if(driver.findElement(By.xpath("//td[@data-year = '20"+yy+"' and @data-month = '"+(mm-1)+"']/a[text() = '"+dd+"']")).isEnabled()){
+//				
+//				driver.findElement(By.xpath("//td[@data-year = '20"+yy+"' and @data-month = '"+(mm-1)+"']/a[text() = '"+dd+"']")).click();
+//			   }
+//			   else
+//			   {
+//				
+//			    driver.findElement(By.xpath("//span[text()='Next']")).click();
+//			    driver.findElement(By.xpath("//td[@data-year = '20"+yy+"' and @data-month = '"+(mm-1)+"']/a[text() = '"+dd+"']")).click();
+//			   }
+//			
+			
+			
+//			driver.findElement(By.xpath("//div[text()='Departure']/following::input[@id='departDateInt']/following::img[3]")).click();
+			driver.findElement(By.xpath("//td[@data-year = '"+yy+"' and @data-month = '"+(mm-1)+"']/a[text() = '"+dd+"']")).click();
 //			
 			
 			String travel=a[3]; //travel class from excel
@@ -257,59 +317,15 @@ public class Fresh
 			String yy=date.substring(6,8);
 			System.out.println(yy);
 			int year=Integer.parseInt(yy);
+//			
+//			String Year=driver.findElement(By.xpath("//div[contains(@class,'datepicker-group-last')]//span[@class='ui-datepicker-year']")).getText();
+//			String Month=driver.findElement(By.xpath("//div[contains(@class,'datepicker-group-last')]//span[@class='ui-datepicker-month']")).getText();
+//			String Day=driver.findElement(By.xpath("//div[@class='ui-datepicker-group ui-datepicker-group-last']//div[@class='ui-datepicker-title']//span[2]")).getText();
+//			
 			
-			String Month=driver.findElement(By.xpath("//div[@class='ui-datepicker-group ui-datepicker-group-last']//div[@class='ui-datepicker-title']//span[1]")).getText();
-			String Day=driver.findElement(By.xpath("//div[@class='ui-datepicker-group ui-datepicker-group-last']//div[@class='ui-datepicker-title']//span[2]")).getText();
+		
 			
 			
-			String convertedval = "";
-			switch (month) {
-			case 1:
-				convertedval= "January";
-				break;
-			case 2:
-				convertedval= "February";
-				break;
-			case 3:
-				convertedval= "March";
-				break;
-			case 4:
-				convertedval= "April";
-				break;
-			case 5:
-				convertedval= "May";
-				break;
-			case 6:
-				convertedval= "June";
-				break;
-			case 7:
-				convertedval= "July";
-				break;
-			case 8:
-				convertedval= "August";
-				break;
-			case 9:
-				convertedval= "September";
-				break;
-			case 10:
-				convertedval= "October";
-				break;
-			case 11:
-				convertedval= "November";
-				break;
-			case 12:
-				convertedval= "December";
-				break;
-				
-				
-				
-				
-				
-
-			default:
-				break;
-			}
-			System.out.println("===================="+convertedval);
 			Select ddmonth=new Select(driver.findElement(By.xpath("//select[@id='month']")));
 			ddmonth.selectByIndex(month);
 			Select date1=new Select(driver.findElement(By.xpath("//select[@id='date']")));
@@ -353,13 +369,97 @@ public class Fresh
         	System.out.println("end record");
         }
 	}
+	@Test(enabled=false)
+	public void practice() throws IOException, InterruptedException
+	{
+		driver.get(google);
+		driver.findElement(By.xpath("//a[text()='Gmail']")).click();
+		setExcel("E:\\data\\testdata.xlsx", "Sheet4");
+		
+		int rows=sheet.getLastRowNum()+1;
+		int cols=sheet.getRow(0).getLastCellNum();
+		System.out.println(rows);
+		System.out.println(cols);
+		WebElement username=driver.findElement(By.id("Email"));
+		WebElement password=driver.findElement(By.id("Passwd"));
+		
+		String a[]=new String[cols-1];
+		for(int i=1;i<rows;i++){
+			for(int j=1;j<cols;j++)
+			{
+//				driver.findElement(By.id("gbqfq")).sendKeys(getCellValue(i, j));
+				Thread.sleep(2000);
+				
+//				a[j-1]=getCellValue(i,j);
+				if(j==1)
+				username.sendKeys(getCellValue(i, j));
+				if(j==2)
+				password.sendKeys(getCellValue(i, j));
+			}
+		
+//		username.sendKeys(a[0]);
+//		password.sendKeys(a[1]);
+//		Thread.sleep(2000);
+//		
+		
+		}
+			
+	}
 	
-	
+	public String convertedmonth(int m)
+	{
+		String convertedmonth = "";
+		switch (m) {
+		case 1:
+			convertedmonth= "January";
+			break;
+		case 2:
+			convertedmonth= "February";
+			break;
+		case 3:
+			convertedmonth= "March";
+			break;
+		case 4:
+			convertedmonth= "April";
+			break;
+		case 5:
+			convertedmonth= "May";
+			break;
+		case 6:
+			convertedmonth= "June";
+			break;
+		case 7:
+			convertedmonth= "July";
+			break;
+		case 8:
+			convertedmonth= "August";
+			break;
+		case 9:
+			convertedmonth= "September";
+			break;
+		case 10:
+			convertedmonth= "October";
+			break;
+		case 11:
+			convertedmonth= "November";
+			break;
+		case 12:
+			convertedmonth= "December";
+			break;
 
+		default:
+			break;
+		}
+		return convertedmonth;
+	}
 	@AfterSuite
 	public void destory()
 	{
 		driver.quit();
+		
+		
+		driver.findElement(By.id("gbqfq"));
+		
 	}
 }
 

@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Pawandeep Singh\AppData\Local\Temp\testng-eclipse--531398939\testng-customsuite.xml</span>
+                    <span>C:\Users\Pawandeep Singh\AppData\Local\Temp\testng-eclipse-17914894\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -127,12 +127,11 @@
                   <a name="irctc">
                   </a> <!-- irctc -->
                   <span class="method-name">irctc</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//td[@data-year = &apos;2014&apos; and @data-month = &apos;11&apos;]/a[text() = &apos;18&apos;]&quot;}
-Command duration or timeout: 60.22 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+                  <div class="stack-trace">org.openqa.selenium.NoSuchWindowException: Window not found. The browser window may have been closed.
+Command duration or timeout: 13 milliseconds
 Build info: version: &apos;2.42.2&apos;, revision: &apos;6a6995d&apos;, time: &apos;2014-06-03 17:42:30&apos;
-System info: host: &apos;NODE175&apos;, ip: &apos;192.168.1.2&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_51&apos;
-Session ID: 6016e986-4918-4f7c-be63-4cd7020777ce
+System info: host: &apos;NODE175&apos;, ip: &apos;10.210.0.103&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_51&apos;
+Session ID: 04dde303-3132-4ea8-8151-3e821ef51cd0
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, cssSelectorsEnabled=true, databaseEnabled=true, browserName=firefox, handlesAlerts=true, browserConnectionEnabled=true, webStorageEnabled=true, nativeEvents=false, rotatable=false, locationContextEnabled=true, applicationCacheEnabled=true, takesScreenshot=true, version=27.0}]
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
@@ -142,11 +141,9 @@ Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, cssSele
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:449)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:357)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at selenium.Fresh.irctc(Fresh.java:143)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:614)
+	at org.openqa.selenium.firefox.FirefoxDriver.getScreenshotAs(FirefoxDriver.java:323)
+	at selenium.Fresh.irctc(Fresh.java:232)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -171,12 +168,21 @@ Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, cssSele
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//td[@data-year = &apos;2014&apos; and @data-month = &apos;11&apos;]/a[text() = &apos;18&apos;]&quot;}
+Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Window not found. The browser window may have been closed.
 Build info: version: &apos;2.42.2&apos;, revision: &apos;6a6995d&apos;, time: &apos;2014-06-03 17:42:30&apos;
-System info: host: &apos;NODE175&apos;, ip: &apos;192.168.1.2&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_51&apos;
+System info: host: &apos;NODE175&apos;, ip: &apos;10.210.0.103&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.7.0_51&apos;
 Driver info: driver.version: unknown
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous6393045749293476634webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:9470)
-	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous6393045749293476634webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:407)
+	at &lt;anonymous class&gt;.nsCommandProcessor.prototype.execute(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous5265222555715975395webdriver-profile/extensions/fxdriver@googlecode.com/components/command_processor.js:11525)
+	at &lt;anonymous class&gt;.Dispatcher.executeAs/&lt;(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous5265222555715975395webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:8287)
+	at &lt;anonymous class&gt;.Resource.prototype.handle(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous5265222555715975395webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:8433)
+	at &lt;anonymous class&gt;.Dispatcher.prototype.dispatch(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous5265222555715975395webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:8380)
+	at &lt;anonymous class&gt;.WebDriverServer/&lt;.handle(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous5265222555715975395webdriver-profile/extensions/fxdriver@googlecode.com/components/driver_component.js:11310)
+	at &lt;anonymous class&gt;.createHandlerFunc/&lt;(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous5265222555715975395webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1935)
+	at &lt;anonymous class&gt;.ServerHandler.prototype.handleResponse(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous5265222555715975395webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:2261)
+	at &lt;anonymous class&gt;.Connection.prototype.process(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous5265222555715975395webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1168)
+	at &lt;anonymous class&gt;.RequestReader.prototype._handleResponse(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous5265222555715975395webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1616)
+	at &lt;anonymous class&gt;.RequestReader.prototype._processBody(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous5265222555715975395webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1464)
+	at &lt;anonymous class&gt;.RequestReader.prototype.onInputStreamReady(file:///C:/Users/PAWAND~1/AppData/Local/Temp/anonymous5265222555715975395webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1333)
 
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -186,7 +192,7 @@ Driver info: driver.version: unknown
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Pawandeep Singh\AppData\Local\Temp\testng-eclipse--531398939\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Pawandeep Singh\AppData\Local\Temp\testng-eclipse-17914894\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -243,12 +249,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'irctc')
 data.setCell(0, 2, 'selenium.Fresh')
-data.setCell(0, 3, 120623);
+data.setCell(0, 3, 50358);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 50 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -263,12 +269,14 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">1 ignored method</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">selenium.Fresh</span>
               <div class="ignored-methods-div">
+                <span class="ignored-method-name">practice</span>
+                <br/>
                 <span class="ignored-method-name">macys</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
@@ -290,11 +298,13 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">irctc</span>
-                <span class="method-start">8055 ms</span>
+                <span class="method-start">8265 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-suite after">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">destory</span>
-                <span class="method-start">128733 ms</span>
+                <span class="method-start">58684 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
