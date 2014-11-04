@@ -30,11 +30,12 @@ public class Excel
 	
 	public String getCellValue(int row,int col)
 	{
+		{
 		cell=sheet.getRow(row).getCell(col);
 		formatter=new DataFormatter();
 		return formatter.formatCellValue(cell);
 		
-		
+		}
 		
 	}
 
